@@ -15,7 +15,7 @@ struct Persona {
         derecha = NULL;
     }};
 
-    class ArbolGenealogico {
+class ArbolGenealogico {
 private:
     Persona* raiz;
 
@@ -28,10 +28,9 @@ private:
         } else if (nombre > nodo->nombre) {
             nodo->derecha = insertar(nodo->derecha, nombre);
         }
-
-        }
         return nodo;
     }
+
 
 
 
