@@ -7,7 +7,7 @@ using namespace std;
 struct Persona {
     string nombre;
     Persona* izquierda;
-    Persona* derecha
+    Persona* derecha;
 
     Persona(string nom) {
         nombre = nom;
@@ -15,10 +15,25 @@ struct Persona {
         derecha = NULL;
     }};
 
+    class ArbolGenealogico {
+private:
+    Persona* raiz;
+
+    Persona* insertar(Persona* nodo, string nombre) {
+        if (nodo == NULL) {
+            return new Persona(nombre);
+        }
+        if (nombre < nodo->nombre) {
+            nodo->izquierda = insertar(nodo->izquierda, nombre);
+        } else if (nombre > nodo->nombre) {
+            nodo->derecha = insertar(nodo->derecha, nombre);
+        }
 
         }
         return nodo;
     }
+
+
 
     // Recorrido inorden
     void inorden(Persona* nodo) {
