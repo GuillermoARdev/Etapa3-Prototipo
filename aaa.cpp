@@ -1,6 +1,10 @@
-#include <iostream>  // Incluye la biblioteca de entrada/salida
+//Arbol genealogico.
+#include <iostream>
+#include <string>
+using namespace std;
 
-int main() {
-    std::cout << "Hola, mundo!" << std::endl;  // Imprime el mensaje
-    return 0;  // Indica que el programa terminó correctamente
-}
+//Estructura "persona" 
+struct persona {
+    string nombre;
+    Persona* izquierda;
+    Persona* derecha
