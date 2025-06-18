@@ -4,7 +4,11 @@
 using namespace std;
 
 //Estructura "persona" 
-struct persona {
+struct Persona {
     string nombre;
     Persona* izquierda;
     Persona* derecha
+
+    Persona(string nom) {
+        nombre = nom;
+        izquierda
