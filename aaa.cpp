@@ -15,3 +15,4 @@ struct Persona {
         derecha = NULL;
     }};
     
+public:
