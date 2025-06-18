@@ -55,3 +55,60 @@ struct Persona {
                                        : pertenece(nodo->derecha, nombre);
     }
 public:
+    ArbolGenealogico() {
+        raiz = NULL;
+    }
+
+    // Funcion publica para agregar un miembro
+    void agregarMiembro(string nombre) {
+        raiz = insertar(raiz, nombre);
+    }
+
+    // Funcion publica para verificar si un miembro pertenece
+    bool pertenece(string nombre) {
+        return pertenece(raiz, nombre);
+    }
+
+    // Mostrar arbol en inorden
+    void mostrarInorden() {
+        cout << "Recorrido Inorden (por orden alfabetico): ";
+        inorden(raiz);
+        cout << endl;
+    }
+
+    // Mostrar arbol en preorden
+    void mostrarPreorden() {
+        cout << "Recorrido Preorden (raiz-izquierda-derecha): ";
+        preorden(raiz);
+        cout << endl;
+    }
+
+    // Mostrar arbol en postorden
+    void mostrarPostorden() {
+        cout << "Recorrido Postorden (izquierda-derecha-raiz): ";
+        postorden(raiz);
+        cout << endl;
+    }
+};
+
+int main() {
+    ArbolGenealogico arbol;
+
+    // Insertar miembros al arbol genealogico
+    arbol.agregarMiembro("Guillermo");
+    arbol.agregarMiembro("Angel");
+    arbol.agregarMiembro("Dayana");
+    arbol.agregarMiembro("Carlos");
+    arbol.agregarMiembro("Jose");
+
+    // Mostrar los recorridos del arbol
+    arbol.mostrarInorden();
+    arbol.mostrarPreorden();
+    arbol.mostrarPostorden();
+
+    // Verificar si un miembro pertenece al arbol
+    cout << "\n¿Guillermo pertenece al arbol? " << (arbol.pertenece("Guillermo") ? "Si" : "No") << endl;
+    cout << "¿Dayana pertenece al arbol? " << (arbol.pertenece("Dayana") ? "Si" : "No") << endl;
+
+    return 0;
+}
