@@ -11,4 +11,7 @@ struct Persona {
 
     Persona(string nom) {
         nombre = nom;
-        izquierda
+        izquierda = NULL;
+        derecha = NULL;
+    }};
+    
